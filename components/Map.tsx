@@ -10,7 +10,7 @@ interface MapComponentProps {
 export default function MapComponent({ lat, lng }: MapComponentProps) {
   const center = { lat, lng };
   return (
-    <LoadScript googleMapsApiKey="AIzaSyA8YA961uYrDcRLjJGBbQppaFc_6RUiQmw">
+    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
         <Marker position={center} />
       </GoogleMap>
